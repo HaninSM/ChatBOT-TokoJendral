@@ -55,7 +55,7 @@ Token ini berfungsi sebagai "kunci akses" program untuk mengendalikan bot Telegr
 6. BotFather akan meminta **Username Bot** (harus unik dan berakhiran kata `bot` atau `_bot`).  
    *Contoh masukan:* `TokoJendralBot` atau `InvoAssistant_bot`.
 7. Setelah berhasil, BotFather akan mengirimkan pesan konfirmasi berisi **HTTP API Token**.  
-   *Contoh token:* `8679898502:AAH0vEUiuzahTjXPsxtTHFpi02_a48SYmYc`
+   *Contoh token:* `xx`
 8. Salin (*copy*) token tersebut untuk dimasukkan ke file `.env`.
 
 ---
@@ -74,7 +74,7 @@ Telegram User ID adalah nomor identitas unik akun Telegram pribadi Anda. Bot men
    Last: Santoso
    Lang: id
    ```
-5. Salin nomor yang ada di baris **`Id:`** (contoh di atas: `1284192524`).
+5. Salin nomor yang ada di baris **`Id:`** (contoh di atas: `xx`).
 6. Nomor ini yang menjadi nilai untuk `TELEGRAM_OWNER_ID`.
 
 ---
