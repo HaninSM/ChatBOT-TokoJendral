@@ -32,9 +32,9 @@ Sebelum menjalankan chatbot, Anda memerlukan 3 kredensial utama yang semuanya da
 +---------------------+-------------------------------+----------------------------------------+
 | Kredensial          | Sumber                        | Format Contoh                          |
 +---------------------+-------------------------------+----------------------------------------+
-| TELEGRAM_BOT_TOKEN  | @BotFather di Telegram        | 8679898502:AAH0vEUiuzahTjXPsxtTHF...   |
-| TELEGRAM_OWNER_ID   | @userinfobot di Telegram      | 1284192524                             |
-| GEMINI_API_KEY      | Google AI Studio              | AIzaSyDMozq2VdKzB3IckWBWVUd8bpu...     |
+| TELEGRAM_BOT_TOKEN  | @BotFather di Telegram        | xx...   |
+| TELEGRAM_OWNER_ID   | @userinfobot di Telegram      | xx                     |
+| GEMINI_API_KEY      | Google AI Studio              | xx.     |
 +---------------------+-------------------------------+----------------------------------------+
 ```
 
