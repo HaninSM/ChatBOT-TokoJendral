@@ -1,0 +1,21 @@
+{
+  "name": "invo-chat-assistant",
+  "version": "1.0.0",
+  "description": "Telegram AI Copilot for Invo POS Owner powered by Google Gemini and FIFO Analytics",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "test:tools": "node tests/test-tools.js",
+    "simulate": "node tests/simulate-chat.js",
+    "demo": "node tests/demo-responses.js"
+  },
+  "dependencies": {
+    "@google/genai": "^2.3.0",
+    "better-sqlite3": "^13.0.3",
+    "dotenv": "^18.0.4",
+    "grammy": "^1.36.0",
+    "knex": "^3.3.0"
+  }
+}
