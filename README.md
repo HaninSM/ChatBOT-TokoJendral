@@ -102,13 +102,13 @@ Buat atau edit file bernama `.env` di folder root `d:\ChatBOT\` dan isi ketiga k
 
 ```env
 # 1. Token Bot dari @BotFather
-TELEGRAM_BOT_TOKEN=8679898502:AAH0vEUiuzahTjXPsxtTHFpi02_a48SYmYc
+TELEGRAM_BOT_TOKEN=xx
 
 # 2. Telegram User ID Anda dari @userinfobot
-TELEGRAM_OWNER_ID=1284192524
+TELEGRAM_OWNER_ID=xx
 
 # 3. Google Gemini API Key dari Google AI Studio
-GEMINI_API_KEY=AIzaSyDMozq2VdKzB3IckWBWVUd8bpu3MixCTts
+GEMINI_API_KEY=xx
 
 # 4. Model Gemini (Direkomendasikan: gemini-3.5-flash-lite untuk respon instan)
 GEMINI_MODEL=gemini-3.5-flash-lite
