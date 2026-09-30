@@ -51,13 +51,39 @@ async function bootstrap() {
   process.once('SIGINT', shutdown);
   process.once('SIGTERM', shutdown);
 
-  console.log('⚡ Menghubungkan bot ke Telegram network...');
-  bot.start({
-    onStart: (botInfo) => {
-      console.log(`✨ Bot berhasil online sebagai @${botInfo.username}!`);
-      console.log('💬 Siap menerima pesan dari Owner.');
-    },
+  // Error boundary for bot polling
+  bot.catch((err) => {
+    const e = err.error;
+    if (e && e.error_code === 409) {
+      console.warn('⚠️ Terdeteksi konflik sesi Telegram (409). Mencoba menghubungkan ulang...');
+    } else {
+      console.error('❌ Terjadi kesalahan pada bot polling:', err);
+    }
   });
+
+  // Polling with auto-reconnect on 409 Conflict
+  while (true) {
+    try {
+      console.log('⚡ Menghubungkan bot ke Telegram network...');
+      await bot.start({
+        drop_pending_updates: true,
+        onStart: (botInfo) => {
+          console.log(`✨ Bot berhasil online sebagai @${botInfo.username}!`);
+          console.log('💬 Siap menerima pesan dari Owner.');
+        },
+      });
+      break;
+    } catch (err) {
+      const isConflict = err.error_code === 409 || err.description?.includes('Conflict') || err.message?.includes('409');
+      if (isConflict) {
+        console.warn('⚠️ Sesi polling sebelumnya sedang dilepas oleh Telegram (409 Conflict). Mencoba lagi dalam 3 detik...');
+        await new Promise((r) => setTimeout(r, 3000));
+      } else {
+        console.error('Fatal bot error:', err);
+        throw err;
+      }
+    }
+  }
 }
 
 bootstrap().catch((err) => {
